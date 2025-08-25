@@ -1,0 +1,7 @@
+{
+  "name": "connectcard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
