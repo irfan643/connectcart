@@ -9,10 +9,10 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/tabs/',
-    component: TabsPage,
+    component: TabsPage, 
     children: [
       {
-        path: '',
+        path: '', 
         redirect: '/tabs/tab1'
       },
       {

@@ -1,18 +1,23 @@
 <template>
   <ion-page>
-    <ion-header>
+    <ion-header class="ion-no-border">
       <ion-toolbar>
-        <ion-title>Tab 2</ion-title>
+        <ion-title className="text-2xl">
+           <div className="flex justify-center items-center">
+
+            <h1 >shop </h1> 
+           </div>
+        </ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true">
+    <ion-content :fullscreen="true" class="ion-padding">
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Tab 2</ion-title>
         </ion-toolbar>
-      </ion-header>
+      </ion-header >
 
-      <ExploreContainer name="Tab 2 page" />
+        
     </ion-content>
   </ion-page>
 </template>
