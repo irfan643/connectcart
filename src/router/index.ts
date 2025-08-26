@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        component: () => import('@/views/TabPage.vue')
       },
       {
         path: 'tab2',
@@ -28,7 +28,30 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Tab3Page.vue')
       }
     ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/features/auth/Login.vue')
+  },
+     {
+ path : '/Forget',
+ component :()=> import('@/features/auth/Forget.vue')
+
+     },
+
+     {
+    path: '/SetPassword',
+    component: () => import('@/features/auth/SetPassword.vue')
+  },
+  {
+   path: '/signup',
+    component: () => import('@/features/auth/SignUp.vue')
+  },
+  {path :"/Verification",
+    component :()=> import('@/features/auth/Verification.vue')
+
   }
+
 ]
 
 const router = createRouter({

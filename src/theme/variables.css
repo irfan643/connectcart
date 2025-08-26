@@ -1,2 +1,28 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+@font-face {
+    font-family: 'Manrope';
+    src: url('/src/assets/fonts/Manrope-ExtraLight.ttf') format('truetype');
+}
+@theme {
+    --font-Manrope: 'Manrope', sans-serif;
+}
+ :root {
+      --ion-font-family: 'Manrope', sans-serif; 
+    }
+ @import "tailwindcss";
+ 
+  .btn{
+
+     --padding-top:0.9rem;
+    --padding-bottom: 0.9rem;
+    --border-radius: 0.6rem;
+     
+  }
+   
+.no-highlight {
+  --highlight-color-focused: ;
+  --background :#F2F0F5;
+    
+     
+}

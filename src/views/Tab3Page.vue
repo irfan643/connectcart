@@ -9,9 +9,10 @@
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Tab 3</ion-title>
+
         </ion-toolbar>
       </ion-header>
-
+         
       <ExploreContainer name="Tab 3 page" />
     </ion-content>
   </ion-page>
