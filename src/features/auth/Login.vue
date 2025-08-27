@@ -10,8 +10,8 @@
     @click="goBack"
   />
 </IonRouterLink>
- <div class="absolute left-1/2 transform -translate-x-1/2 text-4xl font-Manrope font-semibold text-black">
-            Welcome
+ <div class="absolute left-1/2 transform -translate-x-1/2 text-[25px] font-Manrope font-semibold font_black">
+            Welcome back
           </div>           
           </div>
        
@@ -44,10 +44,10 @@
 
         </div>
       </div>
-        <div class=" ion-margin-top font mb-4">
-        <router-link to="/Forget">Forgot password</router-link>
+        <div class=" ion-margin-top font">
+        <router-link to="/Forget"  > <span class="text-gray-500 hover:text-blue-500 ">Forgot password</span></router-link>
       </div>
-      <div >
+      <div  class="mt-6">
               <IonButton expand="block" @click="login" color="tertiary"  
              class="btn font-bold  capitalize"
               
@@ -58,11 +58,12 @@
 
 
       
-      <div class="ion-text-center ion-margin-top">
-       <div class="ion-text-center ion-margin-top">
-        Don’t have an account? <router-link to="/signup" router-direction="forward">signup </router-link>
+      
+       <div class="ion-text-center ion-margin-to text-gray-500  mt-32
+        ">
+        Don’t have an account? <router-link to="/signup" router-direction="forward" > <span class="text-gray-500 hover:text-blue-500">signup</span>  </router-link>
       </div>
-      </div>
+    
     </IonContent>
   </IonPage>
 </template>

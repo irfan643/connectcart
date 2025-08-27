@@ -1,39 +1,45 @@
 <template>
   <IonPage>
-    
+
     <div class="flex justify-center items-center">
-      <IonToolbar class="ion-text-center">
-       
-          <h1>Verification</h1>
-        
+      <IonToolbar class="ion-text-center font_black">
+
+        <h1>Verification</h1>
+
       </IonToolbar>
     </div>
 
-   <IonContent class="ion-padding">
-     <div class="grid gap-4 ">
-        <IonTitle>
-         Enter send code
-       </IonTitle>
-         <div>
-          <p>
-            We sent a verification code to your email. Please enter it below to continue.
+    <IonContent class="ion-padding ">
+      <div class="grid gap-4 ">
+        <div class=" text-[1.6rem]  font-Manrope font-semibold font_black">
+          Enter the code
+        </div>
+
+        <div>
+          <p class="text-[16px] text-gray-600
+          ">
+            We sent a verification code to your email.
+            Please<br> enter it below to continue.
           </p>
-         </div>
-  <div class="flex justify-center items-center">
-    <ion-input-otp :length="7" color="tertiary"></ion-input-otp>
-  </div>
-     </div>  
-  
-    <div class=" flex justify-center items-center">
-      <IonButton color="light" class="">
-         resend code
-      </IonButton>
-     
-    
-    </div>
-    
-   
-</IonContent>
+        </div>
+        <div>
+          <ion-input-otp  class="custom"  :length="7" shape="soft" size="small">
+             <a href="#">Resend the code</a>
+          </ion-input-otp> 
+         
+          
+        </div>
+         <div  >
+            <IonButton class=".no-highlight w-full  "  color="tertiary ">
+                Verify
+          </IonButton>
+          </div>
+      </div>
+
+
+
+
+    </IonContent>
 
   </IonPage>
 </template>
@@ -70,3 +76,10 @@ function login() {
   showToast(`Logging in as ${email.value}...`, "success", "top");
 }
 </script>
+ <style scoped>
+  .custom {
+    
+    --height:55px;
+    --color:  #121217;
+  }
+</style>
