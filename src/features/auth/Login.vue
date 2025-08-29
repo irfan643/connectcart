@@ -3,13 +3,13 @@
     <IonHeader class="  ion-no-border">
       <IonToolbar>
          <div class=" flex justify-between items-center ">
-<IonRouterLink router-link="/tabs/tab1" router-direction="back">
+
   <IonIcon 
     :icon="arrowBackOutline" 
     class="text-2xl cursor-pointer pl-2.5" 
     @click="goBack"
   />
-</IonRouterLink>
+
  <div class="absolute left-1/2 transform -translate-x-1/2 text-[25px] font-Manrope font-semibold font_black">
             Welcome back
           </div>           
@@ -83,7 +83,7 @@ const password = ref('')
      
 
  const goBack = () => {
-  router.push({path:"/tabs/tab1", query: { routerDirection: "back" }}); // navigate back in history stack
+  router.push({path:"/tabs/home", query: { routerDirection: "back" }}); // navigate back in history stack
 };
 function login() {
   console.log('Logging in with:', email.value, password.value)

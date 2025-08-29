@@ -30,7 +30,7 @@
           
         </div>
          <div  >
-            <IonButton class=".no-highlight w-full  "  color="tertiary ">
+            <IonButton class=".no-highlight w-full  "   color="tertiary ">
                 Verify
           </IonButton>
           </div>

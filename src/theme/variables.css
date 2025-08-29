@@ -29,3 +29,11 @@ http://ionicframework.com/docs/theming/ */
 .font_black{
    color: #121217;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, Edge */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* for Internet Explorer and Edge */
+  scrollbar-width: none;     /* for Firefox */
+}

@@ -1,7 +1,39 @@
+import TabLayout from '@/views/TabLayout.vue';
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
+ 
+  {
+    path: '/',
+    component: TabLayout,
+     redirect: '/home',
+    children: [
+      {
+        path: 'home',
+        component: () => import('@/views/Home.vue')
+      },
+      {
+        path: 'order',
+        component: () => import('@/views/Order.vue')
+      },
+      {
+        path: 'cart',
+        component: () => import('@/views/Cart.vue')
+      },
+      {
+        path: 'profile',
+        component: () => import('@/views/Profile.vue')
+      }
+    ]
+  }, 
+    {
+      path: '/Product/:id',
+      component: () => import('@/views/ProductDetailes.vue'),
+      props: true
+
+    },
+
   {
     path: '/login',
     component: () => import('@/features/auth/Login.vue')
@@ -24,10 +56,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/features/auth/Verification.vue')
 
   },
-  {
-    path: '',
-    redirect:"/login"
-  },
+ 
 ]
 
 const router = createRouter({
