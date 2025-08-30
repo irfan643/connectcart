@@ -1,7 +1,7 @@
 <template>
     <IonPage>
-        <IonHeader>
-            <IonToolbar>
+        <IonHeader class=" ion-no-border">
+            <IonToolbar  class="">
                 <IonTitle class="ion-text-center">peofile</IonTitle>
             </IonToolbar>
              </IonHeader>

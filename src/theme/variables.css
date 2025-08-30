@@ -37,3 +37,10 @@ http://ionicframework.com/docs/theming/ */
   -ms-overflow-style: none;  /* for Internet Explorer and Edge */
   scrollbar-width: none;     /* for Firefox */
 }
+.text_color {
+  color: #120D1C;
+ }
+ .button_color{
+  background-color: #7847EB;
+  color: #FAF7FC;
+ }
