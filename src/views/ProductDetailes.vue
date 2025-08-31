@@ -40,7 +40,7 @@
         <!-- Description -->
         <ion-card class="shadow-none space-y-4 border-none text_color">
           <ion-card-header>
-            <ion-card-title class="text_color   font-bold">
+            <ion-card-title class="text_color font-bold">
               Description
             </ion-card-title>
           </ion-card-header>
@@ -52,76 +52,129 @@
             </p>
 
             <!-- Specification Section -->
-<h1 class="font-Manrope text-[2.5rem] font-bold pb-6 text_color">
-  Specification
-</h1>
 
-            <ion-grid>
-              <ion-row>
-                <ion-col size="6" v-for="(spec, index) in product.specs" :key="index">
-                  <p class="mb-2">{{ spec }}</p>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="shadow-none my-4 border-none">
+          <ion-card-title class="text_color font-bold">
+            Specifications
+          </ion-card-title>
+          <ion-card-content class="ion-no-padding">
+
+
+            <div class="flex flex-wrap    font-Manrope text_color">
+              <div v-for="(spec, index) in product.specs" :key="index" class="w-1/2    py-4 ">
+                <div class="border-t-2  border-gray-300 mr-4" v-for="(value, key) in spec" :key="key">
+                  <div class="text-[#7847EB] my-2 ">{{ key }}</div>
+                  <div class="text-base">{{ value }}</div>
+                </div>
+              </div>
+            </div>
           </ion-card-content>
         </ion-card>
 
         <!-- Delivery & Returns -->
         <ion-card class="shadow-none ion-no-padding  border-none">
           <ion-card-header>
-            <ion-card-title>Delivery & Returns</ion-card-title>
+            <ion-card-title class="text_color text-xl font-bold">Delivery & Returns</ion-card-title>
           </ion-card-header>
-          <ion-card-content>
+          <ion-card-content class=" my-4 ion-no-padding product-info ion-padding-end">
             <p class="whitespace-pre-line text-base leading-relaxed text-gray-700">
-              {{ product.description }}
+              {{ product.delivery }}
             </p>
           </ion-card-content>
         </ion-card>
 
         <!-- Pair it With -->
-        <ion-text>
-          <h3>Pair it With</h3>
+         <div class="my-4">
+
+           <ion-text class="text_color   font-bold text-xl">
+         Pair it With
         </ion-text>
+         </div>
+       
         <ion-grid>
-          <div class=" flex   space-x-4 overflow-x-auto py-2 no-scrollbar ">
+          <div class=" flex    space-x-4 overflow-x-auto mb-9 py-3.5 no-scrollbar ">
             <ion-row v-for="(item, index) in product.pairWith" :key="index">
               <ion-col>
-                <Card :imageSrc="item.image" :title="item.name" :productId="index" cardWidth="w-42" />
+                <Card 
+                :imageSrc="item.image"
+                 :title="item.name"
+                  :productId="index"
+                   cardWidth="w-42"
+                   
+                    subTitle ="$99.99"
+                      subtitleClass="mt-[-5px]"
+                   />
               </ion-col>
             </ion-row>
           </div>
         </ion-grid>
 
         <!-- Store Info -->
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>Store Information</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <p>{{ product.store.name }}</p>
-            <ion-button expand="block">{{ product.store.actionText }}</ion-button>
-          </ion-card-content>
-        </ion-card>
+         <IonText class="text_color font-bold text-2xl  font-Manrope ">Store Information</IonText>
+        <div class="my-2 flex flex-col  gap-2.5  ">
+         
+            <ion-item class="flex items-center" lines="none" style="--padding-start:0;" >
+            <ion-avatar class="w-16 h-16">
+              <img src="/public/image/store_avtar.png" alt="Store Avatar" />
+            </ion-avatar>
+            <div class="flex flex-col  justify-center ">
+               <ion-label class="text_color flex flex-col font-Manrope font-medium text-base pl-2.5">
+              
+              {{ product.store.name }}
+              
+            </ion-label>
+            <div>
+              <div class="ml-2 text-[#7847EB]">4.5 (120 reviews)</div>
+            </div>
+            </div>
+           
+           
+           
+          </ion-item>
+           <ion-item class="flex   pl-1.5 items-center bg-transparent " lines="none" style="--padding-start:0;">
+              <ion-button fill="solid" size="small"  class=" rounded-lg overflow-hidden text_color size-12" style="--background:#EBE8F2 ">
+
+          <ion-icon aria-hidden="true" slot="icon-only" :icon="callOutline" class="size-8  " />
+          </ion-button>
+            <ion-label class="text_color  font-Manrope !text-lg   pl-2.5 ">
+             Contact now
+            </ion-label>
+           
+           
+          </ion-item>
+<div class="flex justify-center gap-4 mt-4 w-full">
+
+
+    <ion-button class="btn font-bold capitalize " style="--background:#EBE8F2 ; --color:#120D1C; --padding-start:3rem; --padding-end:3rem">
+      add to cart
+    </ion-button>
+
+ <ion-button class="btn font-bold capitalize" color="tertiary" style="  --padding-start:3rem; --padding-end:3rem">
+      buy now
+    </ion-button>
+
+    </div>
+        </div>
       </div>
     </ion-content>
 
     <!-- Bottom Buy Button -->
-    <ion-footer>
-      <ion-toolbar>
-        <ion-button expand="block" color="primary">Buy Now</ion-button>
-      </ion-toolbar>
-    </ion-footer>
+ 
+
+
   </ion-page>
 </template>
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import {
-  IonPage, IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonContent,
-  IonImg, IonSegment, IonSegmentButton, IonCard, IonCardHeader, IonCardTitle,
+  IonPage, IonHeader, IonToolbar,IonAvatar, IonChip, IonLabel, IonItem,IonButtons, IonBackButton, IonContent,
+  IonImg, IonCard, IonCardHeader, IonCardTitle,
   IonCardContent, IonText, IonGrid, IonRow, IonCol, IonButton, IonFooter, IonIcon
 } from '@ionic/vue'
-import { bag, pricetag, } from 'ionicons/icons'
+import { bag, callOutline, } from 'ionicons/icons'
 import Card from '@/components/Card.vue'
 import { string } from 'zod';
 const selectedSize = ref<string>(' ');
@@ -139,8 +192,8 @@ const product = {
   pricetag: '$99.99',
   short_description: 'This is a versatile product suitable for various needs. It can be used as clothing, grocery, or medicine. Please select your preferred option below.',
   description: 'This versatile product is designed to meet a variety of needs, functioning as clothing, a grocery carrier, or a medicine container. Its adaptable nature makes it an essential item for everyday use. Detailed description of the product goes here...',
-  specs: ['Dimension: 10x10x5', 'Weight: 0.5kg', 'Material: Polycarbonate'],
-  delivery: 'Delivered within 2-3 business days. Returns within 30 days.',
+  specs: [{ Dimension: '10x10x5' }, { Weight: '0.5kg' }, { Material: 'Polycarbonate' }],
+  delivery: 'Enjoy free delivery on orders over $50. Returns are accepted within 30 days of purchase, provided the item is unused and in its original packaging.',
   pairWith: [
     { image: '/public/image/limited_addition.png', name: 'Related Item 1' },
     { image: '/public/image/Sneakers.png', name: 'Related Item 2' },
@@ -170,9 +223,11 @@ const product = {
   color: #120D1C;
   margin-bottom: px;
 }
+
 .custom-line-height {
-  
-  font-size: 16px; /* or any size you prefer */
+
+  font-size: 16px;
+  /* or any size you prefer */
   font-weight: bolder;
 }
 </style>
