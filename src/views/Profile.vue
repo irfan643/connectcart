@@ -37,10 +37,13 @@
       <!-- Tabs / Options List -->
       <div class="grid  mt-6 w-full">
         <IonItem lines="none" button class="flex items-center justify-center  mt-4 " v-for="item in tab"
-          :key="item.title">
+          :key="item.title"
+           @click="handleClick(item.route)"
+          >
+
           <IonAvatar slot="start" style="--border-radius: 20%"
             class="bg-[#EBE8F2] ion-align-content-center ion-text-center p-1">
-            <img src="../../public/image/box.svg" alt="Store Avatar" />
+          <IonIcon aria-hidden="true" :icon="item.img" class="size-6"></IonIcon>
           </IonAvatar>
           <IonLabel class="ml-2">
             <h2>{{ item.title }}</h2>
@@ -80,28 +83,40 @@ import {
 } from "@ionic/vue";
 import { settings, } from "ionicons/icons";
 import Forward_arrow from "../../public/image/Forward_arrow.svg";
-import { ref } from "vue";
+import card from  "../../public/image/card.svg"
+import person from  "../../public/image/person.svg"
+import box from  "../../public/image/box.svg"
 
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const tab = [
   {
     title: "Orders",
     description: "View your order history",
-    icon: Forward_arrow
+    icon: Forward_arrow,
+    img:box,
+    route:"/active_order"
   },
   {
     title: "Payment Method",
     description: "Manage your payment method",
-    icon: Forward_arrow
+    icon: Forward_arrow,
+    img: card,
+    route:"/payment"
   },
   {
     title: "Profile Details",
     description: "Edit your profile details",
-    icon: Forward_arrow
+    icon: Forward_arrow,
+     img:person, 
+     route:"/home"
   }
 ]
-const increment = ref(0);
-function handclick() {
-  increment.value++;
+
+function handleClick(path:string) {
+     router.push(path);
+      
 }
 </script>
 <style></style>

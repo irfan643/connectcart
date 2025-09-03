@@ -14,7 +14,7 @@
 
 
       <!-- Title -->
-      <div  :class="[` py-1 pl-2 `,text-section]">
+      <div  :class="[` py-1 pl-2 `,text_section]">
 
           <IonText class="text-[18px]  font-medium text-gray-900   ">
             {{ title  }}

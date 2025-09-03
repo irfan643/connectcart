@@ -27,6 +27,19 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   }, 
+     {
+  path: '/active_order',
+  component: () => import('@/views/Order_Return.vue'),
+   
+
+  },
+    {
+      path: '/payment',
+      component: () => import('@/views/Payment.vue')
+    
+    },
+
+
     {
       path: '/Product/:id',
       component: () => import('@/views/ProductDetailes.vue'),

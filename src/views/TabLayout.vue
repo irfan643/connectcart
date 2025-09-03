@@ -1,7 +1,7 @@
 <template>
   <ion-page>
     <ion-tabs>
-      <ion-router-outlet></ion-router-outlet>
+      <ion-router-outlet></ion-router-outlet>  
       <ion-tab-bar slot="bottom">
          <ion-tab-button tab="home" href="/home">
   <ion-icon aria-hidden="true" :icon="home" />
@@ -25,7 +25,8 @@
 
 
         
-      </ion-tab-bar>
+      </ion-tab-bar>  
+    
     </ion-tabs>
   </ion-page>
 </template>

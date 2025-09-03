@@ -27,7 +27,7 @@
                 </ion-label>
 
                 <!-- Arrow Icon -->
-                        <ion-icon aria-hidden="true" :icon="arrowForwardOutline" class="size-6" />
+                        <IonIcon aria-hidden="true" :icon="arrowForwardOutline" class="size-6" />
 
             </ion-item>
                       </div>
@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 
-import { IonPage, IonContent, IonHeader, IonToolbar,IonLabel, IonAvatar,IonItem,IonTitle, IonBackButton, IonButtons } from "@ionic/vue";
+import { IonPage, IonContent, IonHeader, IonToolbar,IonLabel, IonAvatar,IonItem,IonTitle, IonBackButton, IonButtons, IonIcon } from "@ionic/vue";
 import { ref } from "vue"
 import { arrowBackOutline, arrowForwardOutline} from "ionicons/icons";
 import { randomids } from "@/utils/id";
