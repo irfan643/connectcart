@@ -5,7 +5,7 @@
                 <IonButtons slot="start">
                     <IonBackButton default-href="/" />
                 </IonButtons>
-                <IonTitle class="ion-text-center">cart</IonTitle>
+                <IonTitle class="ion-text-center font-bold text_color">cart</IonTitle>
             </IonToolbar>
         </IonHeader>
         <IonContent class=" ion-padding-start">
@@ -50,7 +50,7 @@
                         SubTotal
 
                         <div>
-                            <p class="font-bold ">{{ formatCurrency(total) }}</p>
+                            <p class="font-bold ">{{ formatCurrency(subtotal) }}</p>
                         </div>
                     </IonLabel>
 
@@ -68,7 +68,7 @@
                     <IonLabel class="!flex justify-between   ">
                         <div>Total</div>
                         <div>
-                            <p class="font-bold ">{{ formatCurrency(total) }}</p>
+                            <p class="font-bold ">{{ formatCurrency(subtotal) }}</p>
                         </div>
                     </IonLabel>
 
@@ -79,7 +79,7 @@
                 <div></div>
                <IonButton expand="block"  color="tertiary"  
              class="btn font-bold  ion-padding  capitalize"
-              
+                   @click="goto()"
               >check out</IonButton>
         </IonContent>
          
@@ -94,6 +94,19 @@ import { IonItem } from "@ionic/vue";
 import { IonPage, IonContent, IonHeader, IonToolbar, IonTitle, IonButtons, IonBackButton, IonLabel, IonAvatar,IonButton } from "@ionic/vue";
 import { computed, ref } from "vue"
 import { formatCurrency } from "@/utils/id";
+import { createMemoryHistory, useRouter } from "vue-router";
+ import Checkout from "./Checkout.vue";
+const route=useRouter();
+ function goto(){
+        route.push({
+            path:"/checkout",
+            state:{
+                summary:summary.value
+            }
+        })
+       
+      
+ }
 const products = ref([
     {
         orderNumber: 45631,
@@ -118,13 +131,29 @@ const products = ref([
     },
 
 ]);
-let total = computed(() => {
-    return products.value.reduce((acc, product) => {
-        return acc + product.price * product.quantity
-    }, 0)
-})
+       let subtotal =computed(()=>{
+               return products.value.reduce((acc , product) => {
+                return   acc + product.price * product.quantity
+               }, 0)
+       }) 
+// let total = computed(() => {
+                    
+//  if (typeof shipping.value === "number") {
+//     return subtotal.value + shipping.value
+//     }
+//    return  subtotal.value
+// })
 
-
+ const shipping = ref("FREE")
+const summary = computed(() => {
+  return {
+    subtotal: subtotal.value,
+    shipping: shipping.value,
+    total: subtotal.value + (typeof shipping.value === "number" ? shipping.value : 0)
+    
+  }
+}) 
+console.log(summary.value)
 
 const increment = (index: number) => {
     products.value[index].quantity++;

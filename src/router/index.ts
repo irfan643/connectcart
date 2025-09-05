@@ -38,6 +38,20 @@ const routes: Array<RouteRecordRaw> = [
       component: () => import('@/views/Payment.vue')
     
     },
+    {
+      path: '/edit_profile',
+      component: () => import('@/views/EditProfile.vue')
+    
+    },
+      {
+  path:"/checkout",
+   component :()=> import ('@/views/Checkout.vue')
+  
+
+  },
+     
+     
+     
 
 
     {
@@ -69,6 +83,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/features/auth/Verification.vue')
 
   },
+ 
  
 ]
 

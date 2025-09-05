@@ -2,7 +2,7 @@
   <!-- Main Page Container -->
   <IonPage>
     <!-- Page Header -->
-    <IonHeader class="ion-no-border shadow-none">
+    <IonHeader class="ion-no-border    shadow-none">
       <IonToolbar class="px-2 ion-no-border">
         <!-- Page Title -->
         <IonTitle class="ion-text-center ml-6 font-bold text_color capitalize">profile</IonTitle>
@@ -110,7 +110,7 @@ const tab = [
     description: "Edit your profile details",
     icon: Forward_arrow,
      img:person, 
-     route:"/home"
+     route:"/edit_profile"
   }
 ]
 

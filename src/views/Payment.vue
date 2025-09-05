@@ -11,9 +11,9 @@
     </IonHeader>
 
     <!-- Content -->
-    <IonContent class="ion-padding">
+    <IonContent class="ion-padding  ">
          
-             
+          <div class=" flex flex-col  gap-4">    
         <!-- Payment Option -->
         <IonItem lines="none"
         button 
@@ -35,18 +35,54 @@
         </IonItem>
 
         <!-- PayPal -->
+        <IonItem lines="none"
+        button 
+        class="rounded-lg"
+        > 
+        <div class="size-8  mr-6 ">
+              <IonIcon :icon="Rectangle"  class=" size-8 "  ></IonIcon>
+        </div>
+            
+            <div>
+              <p class="font-medium text_coloe">PayPal</p>
+              <p class="text-sm text-gray-500">PayPal account : user@example.com</p>
+            </div>
+          
+          <IonButton  fill="clear"   slot="end" >
+            <IonIcon slot="icon-only" :icon="chevronForwardOutline" class="text-gray-400 w-5 h-5" />
+
+          </IonButton>
+        </IonItem>
         
         <!-- Another Credit Card -->
       
-      
+      <IonItem lines="none"
+        button 
+        class="rounded-lg"
+        > 
+        <div class="size-8  mr-6 ">
+              <IonIcon :icon="Rectangle"  class=" size-8 "  ></IonIcon>
+        </div>
+            
+            <div>
+              <p class="font-medium">Credit Card</p>
+              <p class="text-sm text-gray-500">Master Card ending in 5678</p>
+            </div>
+          
+          <IonButton  fill="clear"   slot="end" >
+            <IonIcon slot="icon-only" :icon="chevronForwardOutline" class="text-gray-400 w-5 h-5" />
 
+          </IonButton>
+        </IonItem>
+      
+      </div>
       <!-- Add Payment Button -->
       <div class="mt-9 flex justify-center
       
-      
+
       
        ">
-        <IonButton expand="fill"   color="tertiary" class="bg-purple-600 hover:bg-purple-700 rounded-lg">
+        <IonButton expand="fill"    color="tertiary" class="  btn font-bold " >
           Add Payment Method
         </IonButton>
       </div>

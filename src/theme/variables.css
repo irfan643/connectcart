@@ -17,7 +17,6 @@ http://ionicframework.com/docs/theming/ */
      --padding-top:0.9rem;
     --padding-bottom: 0.9rem;
     --border-radius: 0.6rem;
-     
   }
    
 .no-highlight {
@@ -41,6 +40,12 @@ http://ionicframework.com/docs/theming/ */
   color: #120D1C;
  }
  .button_color{
-  background-color: #7847EB;
-  color: #FAF7FC;
+  --background:#7847EB !important;
+  
+  color: #FAF7FC !important;
+ 
+}
+
+ .p_color{
+  color:#634F96 !important;
  }
