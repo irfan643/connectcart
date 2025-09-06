@@ -10,7 +10,9 @@
   </IonHeader>
         <IonContent>
                       <div v-for="(item) in order" :key="item.id">
-                                    <ion-item lines="none" class="    overflow-hidden pb-4">
+                                    <ion-item lines="none" class="overflow-hidden pb-4" 
+                                      @click="goorder()"
+                                    >
                 <!-- Product Image -->
                 <ion-avatar slot="start" class="w-[70px] h-[93px] rounded-sm overflow-hidden"
                     style="--border-radius: 0.375rem;">
@@ -47,6 +49,7 @@ import { IonPage, IonContent, IonHeader, IonToolbar,IonLabel, IonAvatar,IonItem,
 import { ref } from "vue"
 import { arrowBackOutline, arrowForwardOutline} from "ionicons/icons";
 import { randomids } from "@/utils/id";
+import router from "@/router";
 const order =[
     {
         id:randomids(),
@@ -71,6 +74,9 @@ const order =[
     }
 ]
 
+   function goorder(){
+          router.push("/OrderDetails")
 
+   }
 </script>
 <style></style>

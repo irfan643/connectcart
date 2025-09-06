@@ -1,95 +1,86 @@
-import TabLayout from '@/views/TabLayout.vue';
-import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
+import TabLayout from "@/views/TabLayout.vue";
+import { createRouter, createWebHistory } from "@ionic/vue-router";
+import { RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
- 
   {
-    path: '/',
+    path: "/",
     component: TabLayout,
-     redirect: '/home',
+    redirect: "/home",
     children: [
       {
-        path: 'home',
-        component: () => import('@/views/Home.vue')
+        path: "home",
+        component: () => import("@/views/Home.vue"),
       },
       {
-        path: 'order',
-        component: () => import('@/views/Order.vue')
+        path: "order",
+        component: () => import("@/views/Order.vue"),
       },
       {
-        path: 'cart',
-        component: () => import('@/views/Cart.vue')
+        path: "cart",
+        component: () => import("@/views/Cart.vue"),
       },
       {
-        path: 'profile',
-        component: () => import('@/views/Profile.vue')
-      }
-    ]
-  }, 
-     {
-  path: '/active_order',
-  component: () => import('@/views/Order_Return.vue'),
-   
-
+        path: "profile",
+        component: () => import("@/views/Profile.vue"),
+      },
+    ],
+  },
+  {
+    path: "/active_order",
+    component: () => import("@/views/Order_Return.vue"),
+  },
+  {
+    path: "/payment",
+    component: () => import("@/views/Payment.vue"),
+  },
+  {
+    path: "/edit_profile",
+    component: () => import("@/views/EditProfile.vue"),
+  },
+  {
+    path: "/checkout",
+    component: () => import("@/views/Checkout.vue"),
+  },
+  {
+    path: "/OrderDetails",
+    component: () => import("@/views/OrderDetails.vue"),
   },
     {
-      path: '/payment',
-      component: () => import('@/views/Payment.vue')
-    
+      path :"/Search",
+      component :()=> import("@/views/SearchPage.vue")
     },
-    {
-      path: '/edit_profile',
-      component: () => import('@/views/EditProfile.vue')
-    
-    },
-      {
-  path:"/checkout",
-   component :()=> import ('@/views/Checkout.vue')
-  
-
+  {
+    path: "/Product/:id",
+    component: () => import("@/views/ProductDetailes.vue"),
+    props: true,
   },
-     
-     
-     
-
-
-    {
-      path: '/Product/:id',
-      component: () => import('@/views/ProductDetailes.vue'),
-      props: true
-
-    },
 
   {
-    path: '/login',
-    component: () => import('@/features/auth/Login.vue')
+    path: "/login",
+    component: () => import("@/features/auth/Login.vue"),
   },
   {
-    path: '/Forget',
-    component: () => import('@/features/auth/Forget.vue')
-
+    path: "/Forget",
+    component: () => import("@/features/auth/Forget.vue"),
   },
   {
-    path: '/SetPassword',
-    component: () => import('@/features/auth/SetPassword.vue')
+    path: "/SetPassword",
+    component: () => import("@/features/auth/SetPassword.vue"),
   },
   {
-    path: '/signup',
-    component: () => import('@/features/auth/SignUp.vue')
+    path: "/signup",
+    component: () => import("@/features/auth/SignUp.vue"),
   },
   {
     path: "/Verification",
-    component: () => import('@/features/auth/Verification.vue')
-
+    component: () => import("@/features/auth/Verification.vue"),
   },
- 
- 
-]
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

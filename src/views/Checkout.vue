@@ -47,7 +47,7 @@
        <div class="ion-padding">
         <IonItem  class="mt-4 rounded-xl border  border-[#e0dff5]" lines="none">
         <IonInput placeholder="Discount code"></IonInput>
-        <IonIcon name="checkmark" slot="end" class="text-purple-600" />
+        <IonIcon :icon="checkmark" slot="end" class="text-purple-600" />
       </IonItem>
        <!-- Price Summary -->
       <div class="mt-6 space-y-2 text-sm">
@@ -98,24 +98,20 @@ import {
   IonLabel,
   IonInput,
   IonIcon,
-  IonButton
+  IonButton,
+   
 } from '@ionic/vue'
+import { checkmark } from 'ionicons/icons';
 import { useRoute } from 'vue-router'
-import { randomids } from '@/utils/id';
-const route=useRoute();
-    interface CartSummary{
-       total: number
-  subtotal: number
-  shipping: number | string
-       
+const route=useRoute(); 
+const summary = {
+  subtotal: Number(route.query.subtotal),
+  total: Number(route.query.total),
+  shipping: route.query.shipping || 'FREE'
+}  
 
-    }
 
-const summary = ((route as any).state?.summary || {
-  total: 0,
-  subtotal: 0,
-  shipping: "FREE"
-}) as CartSummary
+
 </script>
 <style scoped>
    p{

@@ -53,7 +53,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: 'Title'
+    default: ''
   },
   subTitle: {
     type: String,

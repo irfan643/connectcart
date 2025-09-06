@@ -13,7 +13,7 @@
                 class="overflow-hidden mb-2.5 pb-4 ion-no-padding">
                 <!-- Product Image -->
                 <ion-avatar slot="start" class="w-[52px] h-[52px] rounded-sm overflow-hidden"
-                    style="--border-radius: 0.375rem;">
+           x         style="--border-radius: 0.375rem;">
                     <img :src="product.image" alt="Product" />
                 </ion-avatar>
 
@@ -100,9 +100,11 @@ const route=useRouter();
  function goto(){
         route.push({
             path:"/checkout",
-            state:{
-                summary:summary.value
-            }
+             query: {
+      subtotal: summary.value.subtotal.toString(),
+      total: summary.value.total.toString(),
+      shipping: summary.value.shipping.toString(),
+    }
         })
        
       
@@ -145,7 +147,7 @@ const products = ref([
 // })
 
  const shipping = ref("FREE")
-const summary = computed(() => {
+const summary =  computed(() => {
   return {
     subtotal: subtotal.value,
     shipping: shipping.value,
@@ -153,6 +155,7 @@ const summary = computed(() => {
     
   }
 }) 
+
 console.log(summary.value)
 
 const increment = (index: number) => {

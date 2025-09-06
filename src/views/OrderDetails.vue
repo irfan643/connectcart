@@ -1,18 +1,17 @@
 <template>
   <IonPage>
     <!-- Header -->
-    <IonHeader class="border-none ion-shadow-none">
+    <IonHeader class="ion-no-border shadow-none">
       <IonToolbar>
         <IonButtons slot="start">
           <IonBackButton default-href="/" />
         </IonButtons>
-        <IonTitle class="ion-text-center">Order Details</IonTitle>
+        <IonTitle class="ion-text-center text_color font-semibold">Order Details</IonTitle>
       </IonToolbar>
     </IonHeader>
 
     <!-- Content -->
     <IonContent class="ion-padding bg-[#faf7fc]">
-      
       <!-- Order Info -->
       <div class="space-y-3">
         <div class="flex justify-between summary-row">
@@ -34,48 +33,81 @@
       </div>
 
       <!-- Progress -->
-      <div class="mt-6">
-        <div class="flex justify-between summary-row mb-2">
-          <span>Order status</span>
-          <span>75%</span>
+      <div class="my-9">
+        <div class="flex justify-between mb-2">
+          <span class="font-bold">Order status</span>
+          <!--- status percentage -->
+          <span>{{ statusbar * 100 + `%` }}</span>
         </div>
-        <IonProgressBar value="0.75" color="primary" class="rounded-lg h-2"></IonProgressBar>
-        <p class="text-sm text-violet-500 mt-2">Estimated delivery: 2 days</p>
+        <IonProgressBar
+          :value="statusbar"
+          color="tertiary"
+          class="rounded-lg h-2"
+        ></IonProgressBar>
+        <p class="text-sm text-violet-500 mt-2 summary-row">
+          Estimated delivery: 2 days
+        </p>
       </div>
 
       <!-- Items List -->
-      <IonList lines="none" class="mt-6 p-0 space-y-4">
+      <IonList lines="none" class=" p-0 space-y-4">
         <IonItem class="ion-no-padding">
-          <IonThumbnail slot="start">
-            <img src="https://via.placeholder.com/60x60?text=T-shirt" />
-          </IonThumbnail>
-          <IonLabel>
-            <h2 class="font-bold">Liam Carter</h2>
-            <p class="text-sm text-gray-500">Cotton T-shirt</p>
-            <p class="font-semibold">$120</p>
-          </IonLabel>
+          <div class="flex gap-3.5">
+            <Card
+              imageSrc="../../public/image/night_suite.png"
+              cardWidth="w-16"
+              cardHeight="h-18"
+            ></Card>
+            <IonLabel>
+              <h2 class="font-bold">Ethan Walker</h2>
+              <p class="text-sm text-gray-500">Leather Belt</p>
+              <p class="font-semibold">$50</p>
+            </IonLabel>
+          </div>
         </IonItem>
 
         <IonItem class="ion-no-padding">
-          <IonThumbnail slot="start">
-            <img src="https://via.placeholder.com/60x60?text=Jeans" />
-          </IonThumbnail>
-          <IonLabel>
-            <h2 class="font-bold">Sophia Bennett</h2>
-            <p class="text-sm text-gray-500">Denim Jeans</p>
-            <p class="font-semibold">$75</p>
-          </IonLabel>
+          <div class="flex gap-3.5">
+            <Card
+              imageSrc="../../public/image/night_suite.png"
+              cardWidth="w-16"
+              cardHeight="h-18"
+            ></Card>
+            <IonLabel>
+              <h2 class="font-bold">Ethan Walker</h2>
+              <p class="text-sm text-gray-500">Leather Belt</p>
+              <p class="font-semibold">$50</p>
+            </IonLabel>
+          </div>
         </IonItem>
 
         <IonItem class="ion-no-padding">
-          <IonThumbnail slot="start">
-            <img src="https://via.placeholder.com/60x60?text=Belt" />
-          </IonThumbnail>
-          <IonLabel>
-            <h2 class="font-bold">Ethan Walker</h2>
-            <p class="text-sm text-gray-500">Leather Belt</p>
-            <p class="font-semibold">$50</p>
-          </IonLabel>
+          <div class="flex gap-3.5">
+            <Card
+              imageSrc="../../public/image/night_suite.png"
+              cardWidth="w-16"
+              cardHeight="h-18"
+            ></Card>
+            <IonLabel>
+              <h2 class="font-bold">Ethan Walker</h2>
+              <p class="text-sm text-gray-500">Leather Belt</p>
+              <p class="font-semibold">$50</p>
+            </IonLabel>
+          </div>
+        </IonItem>
+        <IonItem class="ion-no-padding">
+          <div class="flex gap-3.5">
+            <Card
+              imageSrc="../../public/image/night_suite.png"
+              cardWidth="w-16"
+              cardHeight="h-18"
+            ></Card>
+            <IonLabel>
+              <h2 class="font-bold">Ethan Walker</h2>
+              <p class="text-sm text-gray-500">Leather Belt</p>
+              <p class="font-semibold">$50</p>
+            </IonLabel>
+          </div>
         </IonItem>
       </IonList>
 
@@ -112,12 +144,17 @@ import {
   IonLabel,
   IonThumbnail,
   IonProgressBar,
-} from '@ionic/vue'
+} from "@ionic/vue";
+import { ref } from "vue";
+import Card from "@/components/Card.vue";
+//  change  statubar  put value between 0 (0.4 0.3 ------ ) to 1
+const statusbar = ref(0.75); //change value
 </script>
 
 <style scoped>
 /* Utility: first span bold in every summary row */
 .summary-row > span:first-child {
-  @apply font-semibold text-gray-700;
+  color: #634f96;
+  font-weight: normal;
 }
 </style>

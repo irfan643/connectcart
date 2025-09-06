@@ -25,7 +25,10 @@
       <div
         class="  border-1   h-12 flex justify-center  items-center  border-gray-500 w-full rounded-xl overflow-hidden bg-[#EBE8F2]">
 
-        <ion-searchbar placeholder="Search" style="   --background:#EBE8F2; --box-shadow:none " />
+        <ion-searchbar placeholder="Search" style="   --background:#EBE8F2; --box-shadow:none "
+          @ion-focus="goto()"
+             @ion-input="goto()"
+        ></ion-searchbar>
 
       </div>
 
@@ -105,6 +108,7 @@ import { cartOutline, card } from "ionicons/icons";
 import { ref } from 'vue'
 import Card from "@/components/Card.vue";
    import { randomids } from "@/utils/id";
+import router from "@/router";
 const isCartEmpty = ref(true)
 const Featured= [
   {
@@ -187,5 +191,9 @@ const Categories =[
   },
  
 ]
+ function goto () {
+       router.push("/Search")
+         
+}
 
 </script>
