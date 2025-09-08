@@ -7,12 +7,19 @@
 
         <!-- Right slot -->
         <ion-buttons slot="end">
-          <ion-button>
+          <ion-button
+          
+              @click="goto('cart')"
+          >
             <!-- Show outline when condition is true -->
+             
             <ion-icon v-if="isCartEmpty" :icon="cartOutline" class="size-8 mr-1.5" />
 
             <!-- Show filled when condition is false -->
-            <ion-icon v-else :icon="cart" class="size-8 mr-1.5" />
+            <ion-icon v-else :icon="cart"
+                 
+               
+            class="size-8 mr-1.5" />
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -25,9 +32,10 @@
       <div
         class="  border-1   h-12 flex justify-center  items-center  border-gray-500 w-full rounded-xl overflow-hidden bg-[#EBE8F2]">
 
-        <ion-searchbar placeholder="Search" style="   --background:#EBE8F2; --box-shadow:none "
+        <ion-searchbar placeholder="Search"   style="   --background:#EBE8F2; --box-shadow:none;  "
           @ion-focus="goto()"
              @ion-input="goto()"
+               
         ></ion-searchbar>
 
       </div>
@@ -191,9 +199,7 @@ const Categories =[
   },
  
 ]
- function goto () {
-       router.push("/Search")
-         
+ function goto(route = "/Search") {
+  router.push(route);
 }
-
 </script>
