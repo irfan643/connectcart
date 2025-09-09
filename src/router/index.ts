@@ -1,81 +1,12 @@
-import TabLayout from "@/views/TabLayout.vue";
 import { createRouter, createWebHistory } from "@ionic/vue-router";
 import { RouteRecordRaw } from "vue-router";
-
+import customerRoutes from "./customer";
+import SelllerRute from "./seller";
+import  authRoute from "./auth"
 const routes: Array<RouteRecordRaw> = [
-  {
-    path: "/",
-    component: TabLayout,
-    redirect: "/home",
-    children: [
-      {
-        path: "home",
-        component: () => import("@/views/Home.vue"),
-      },
-      {
-        path: "order",
-        component: () => import("@/views/Order.vue"),
-      },
-      {
-        path: "cart",
-        component: () => import("@/views/Cart.vue"),
-      },
-      {
-        path: "profile",
-        component: () => import("@/views/Profile.vue"),
-      },
-    ],
-  },
-  {
-    path: "/active_order",
-    component: () => import("@/views/Order_Return.vue"),
-  },
-  {
-    path: "/payment",
-    component: () => import("@/views/Payment.vue"),
-  },
-  {
-    path: "/edit_profile",
-    component: () => import("@/views/EditProfile.vue"),
-  },
-  {
-    path: "/checkout",
-    component: () => import("@/views/Checkout.vue"),
-  },
-  {
-    path: "/OrderDetails",
-    component: () => import("@/views/OrderDetails.vue"),
-  },
-    {
-      path :"/Search",
-      component :()=> import("@/views/SearchPage.vue")
-    },
-  {
-    path: "/Product/:id",
-    component: () => import("@/views/ProductDetailes.vue"),
-    props: true,
-  },
-
-  {
-    path: "/login",
-    component: () => import("@/features/auth/Login.vue"),
-  },
-  {
-    path: "/Forget",
-    component: () => import("@/features/auth/Forget.vue"),
-  },
-  {
-    path: "/SetPassword",
-    component: () => import("@/features/auth/SetPassword.vue"),
-  },
-  {
-    path: "/signup",
-    component: () => import("@/features/auth/SignUp.vue"),
-  },
-  {
-    path: "/Verification",
-    component: () => import("@/features/auth/Verification.vue"),
-  },
+  //  ...customerRoutes,
+  ...SelllerRute,
+   ...authRoute,
 ];
 
 const router = createRouter({
@@ -84,3 +15,4 @@ const router = createRouter({
 });
 
 export default router;
+

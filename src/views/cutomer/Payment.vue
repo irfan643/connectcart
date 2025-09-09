@@ -6,7 +6,7 @@
         <IonButtons slot="start">
           <IonBackButton default-href="/home" />
         </IonButtons>
-        <IonTitle class="ion-text-center">Payment Methods</IonTitle>
+        <IonTitle class="ion-text-center font-semibold">Payment Methods</IonTitle>
       </IonToolbar>
     </IonHeader>
 
@@ -96,7 +96,7 @@ import {
   IonButtons, IonBackButton, IonIcon, IonButton,
   IonItem
 } from '@ionic/vue'
-import  Rectangle from "../../public/image/Rectangle.svg"
+import  Rectangle from "@/assets/icon/Rectangle.svg"
 import { chevronForwardOutline } from 'ionicons/icons'
 import { ref } from 'vue'
 

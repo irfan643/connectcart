@@ -23,7 +23,7 @@
       items-center gap-3">
         <!-- Profile Avatar -->
         <IonAvatar class="size-26">
-          <IonImg src="../../public/image/store_avtar.png"></IonImg>
+          <IonImg src='../../../public/image/store_avtar.png'></IonImg>
         </IonAvatar>
         <!-- Profile Name & Membership Label -->
         <IonLabel style="--padding-start: 60px;">
@@ -82,11 +82,11 @@ import {
   IonButton
 } from "@ionic/vue";
 import { settings, } from "ionicons/icons";
-import Forward_arrow from "../../public/image/Forward_arrow.svg";
-import card from  "../../public/image/card.svg"
-import person from  "../../public/image/person.svg"
-import box from  "../../public/image/box.svg"
-
+import Forward_arrow from "@/assets/icon/Forward_arrow.svg";
+import card from  "@/assets/icon/card.svg"
+import person from  "@/assets/icon/person.svg"
+import box from  "@/assets/icon/box.svg"
+   
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();

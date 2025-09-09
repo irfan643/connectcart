@@ -6,7 +6,7 @@
         <IonButtons slot="start">
           <IonBackButton default-href="/home" />
         </IonButtons>
-        <IonTitle class="ion-text-center">Order Return</IonTitle>
+        <IonTitle class="ion-text-center font-semibold">Order Return</IonTitle>
       </IonToolbar>
         
              
@@ -24,7 +24,7 @@
       <ion-label class="text-base   capitalize  font-semibold ">Order</ion-label> 
          
       </IonSegmentButton>
-      <IonSegmentButton   value="order2" content-id="order2"  style="   --indicator-color:#7847EB;    --color-checked:#7847EB">
+      <IonSegmentButton   value="order2" content-id="history"  style="   --indicator-color:#7847EB;    --color-checked:#7847EB">
       <ion-label class="text-base   capitalize  font-semibold ">History</ion-label> 
         
       </IonSegmentButton>
@@ -61,7 +61,37 @@
                       </div>
 
          </IonSegmentContent>     
-       <IonSegmentContent id="order2">vcd,v,v,c.dc,d.</IonSegmentContent>  
+                 <IonSegmentContent id="history" class="  pt-4  ">
+
+                <div v-for="(history) in history" :key="history.id">
+                                    <ion-item lines="none" button class=" overflow-hidden pb-4">
+                <!-- Product Image -->
+                <IonAvatar slot="start" class="w-[70px] h-[93px] rounded-sm overflow-hidden"
+                    style="--border-radius: 0.375rem;">
+                    <img :src="history.productImage" alt="Product" />
+                </IonAvatar>
+
+                <!-- Order Details -->
+                <IonLabel class="ml-4">
+                    <h3 class="!font-bold text_font  font-Manrope">
+                        Order numbe: <span class="font-normal">{{ history.orderNumber }}</span>
+                    </h3>
+                    <p class="text-sm   !text-[#634F96]">Order date:{{history.orderDate}}</p>
+                    <p class="text-sm !text-[#634F96]">Total: {{ history.total }}</p>
+                </IonLabel>
+
+                <!-- Arrow Icon -->
+                         <IonButton fill="clear"  class=" 
+         
+         rounded-full">
+                        <IonIcon aria-hidden="true" slot="icon-only" :icon="arrowForwardOutline" class="size-6 text-gray-400 "  />
+
+                         </IonButton>
+
+            </ion-item>
+                      </div>
+
+         </IonSegmentContent> 
        </IonSegmentView>
   </IonContent>
   </IonPage>
@@ -97,6 +127,31 @@ const order =[
     {
         id:randomids(),
         productImage: "/public/image/bag.png",
+        orderNumber: "789012",
+        orderDate: "2024-01-15",
+        total: 150
+    }
+]
+const history=[
+    {
+        id:randomids(),
+                productImage: "/public/image/shoes2.png",
+
+        orderNumber: "789112",
+        orderDate: "2024-01-16",
+        total: 150
+    },
+    {
+        id:randomids(),
+                productImage: "/public/image/shoes.png",
+
+        orderNumber: "789012",
+        orderDate: "2024-01-15",
+        total: 150
+    },
+    {
+        id:randomids(),
+        productImage: "/public/image/Sneakers.png",
         orderNumber: "789012",
         orderDate: "2024-01-15",
         total: 150

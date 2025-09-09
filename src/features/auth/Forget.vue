@@ -4,7 +4,7 @@
         <IonHeader class="  ion-no-border">
       <IonToolbar>
          <div class=" flex justify-between items-center ">
-<ion-icon 
+<IonIcon 
             :icon=" arrowBackOutline" 
             class="text-2xl cursor-pointer pl-2.5 " 
             @click=" goBack" 
@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonContent, IonInput, IonButton, IonHeader, IonTabBar, IonTitle, IonToolbar } from '@ionic/vue'
+import { IonPage, IonContent, IonInput, IonButton, IonHeader, IonTabBar, IonTitle, IonToolbar, IonIcon } from '@ionic/vue'
 import { ref } from 'vue'
 import { useToast } from '@/composable/useToast'
  import { useRouter } from 'vue-router'
