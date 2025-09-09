@@ -23,7 +23,12 @@ const SelllerRute: Array<RouteRecordRaw> =[
         path :"Profile",
             component :()=> import ("@/views/seller/Profile.vue"),
        },
-    ]
+    ],
+   
+   },
+   {
+      path:"/ProductDetails",
+   component: ()=> import ("@/views/seller/ProductDetails.vue")
    }
 
          

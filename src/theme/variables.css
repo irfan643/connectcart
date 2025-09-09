@@ -49,3 +49,11 @@ http://ionicframework.com/docs/theming/ */
  .p_color{
   color:#634F96 !important;
  }
+   .input_style{
+   
+  --highlight-color-focused: none;
+  --highlight-color-invalid: transparent;
+  --highlight-color-valid: transparent;
+
+
+   }
