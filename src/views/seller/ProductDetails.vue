@@ -65,8 +65,9 @@
                       v-model="product.description"
                       placeholder="Enter product description"
                       :style="{ backgroundColor: '#EDE8F2', borderRadius: '8px' }"
-                        class="h-32"
-                      />
+                      :rows="15" :cols="20" :auto-grow="true"></IonTextarea>
+                      
+                    
             </div>
         </div>   
 
@@ -165,7 +166,6 @@ import {
   IonBackButton,
   IonLabel,
   IonList,
-  IonItem,
   IonInput,
   IonTextarea,
   IonButton,

@@ -52,8 +52,8 @@ http://ionicframework.com/docs/theming/ */
    .input_style{
    
   --highlight-color-focused: none;
-  --highlight-color-invalid: transparent;
-  --highlight-color-valid: transparent;
+  --highlight-color-invalid: none;
+  --highlight-color-valid: none;
 
 
    }

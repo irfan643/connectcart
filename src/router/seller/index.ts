@@ -27,10 +27,14 @@ const SelllerRute: Array<RouteRecordRaw> =[
    
    },
    {
-      path:"/ProductDetails",
+      path:"/ProductDetails/:id",
    component: ()=> import ("@/views/seller/ProductDetails.vue")
-   }
+   },
+{
+   path:"/AddNewProduct",
+   component: ()=>import("@/views/seller/AddNewPeoduct.vue")
 
+}
          
 ]
 export default SelllerRute;

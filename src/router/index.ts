@@ -4,7 +4,7 @@ import customerRoutes from "./customer";
 import SelllerRute from "./seller";
 import  authRoute from "./auth"
 const routes: Array<RouteRecordRaw> = [
-  //  ...customerRoutes,
+  // ...customerRoutes,
   ...SelllerRute,
    ...authRoute,
 ];
