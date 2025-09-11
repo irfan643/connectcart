@@ -34,6 +34,10 @@ const SelllerRute: Array<RouteRecordRaw> =[
    path:"/AddNewProduct",
    component: ()=>import("@/views/seller/AddNewPeoduct.vue")
 
+},
+{
+path: "/OrderInfo/:id",
+component: ()=>import ("@/views/seller/OrderInfo.vue"),
 }
          
 ]

@@ -7,7 +7,7 @@
         <IonButtons slot="end" class=""
          
         >
-          <IonButton router-link="//AddNewProduct/451215">
+          <IonButton router-link="/AddNewProduct">
                      
             <ion-icon aria-hidden="true" :icon="plus" slot="icon-only" class="size-6" />
           </IonButton>
