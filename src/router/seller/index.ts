@@ -1,5 +1,6 @@
 import { RouteRecordRaw } from "vue-router";
    import SellerTabLayout from "@/views/seller/SellerTabLayout.vue";
+import { Component } from "ionicons/dist/types/stencil-public-runtime";
 const SelllerRute: Array<RouteRecordRaw> =[
 
    {
@@ -38,7 +39,16 @@ const SelllerRute: Array<RouteRecordRaw> =[
 {
 path: "/OrderInfo/:id",
 component: ()=>import ("@/views/seller/OrderInfo.vue"),
+},
+
+{
+
+
+   path:"/CustomerInfo",
+   component:()=> import("@/views/seller/CutomerInfo.vue")  ,  
 }
-         
+
+
+   
 ]
 export default SelllerRute;
