@@ -46,8 +46,12 @@ component: ()=>import ("@/views/seller/OrderInfo.vue"),
 
    path:"/CustomerInfo",
    component:()=> import("@/views/seller/CutomerInfo.vue")  ,  
-}
+},
 
+{
+  path:"/Transaction/:id",
+  component: ()=>import ("@/views/seller/TransactionHistory.vue"),
+}  
 
    
 ]

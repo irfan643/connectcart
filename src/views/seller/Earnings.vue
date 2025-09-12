@@ -59,14 +59,14 @@
         <h3 class="font-bold text-lg mb-2">Transaction History</h3>
         <IonList>
           <div class="transaction">
-            <div>
+            <div   @click=" goto(122)" >
               <p>Product A</p>
               <small class="text-gray-500">Order #12345</small>
             </div>
             <span class="text-green-600">+$50</span>
           </div>
           <div class="transaction">
-            <div>
+            <div   @click=" goto(122)">
               <p>Product B</p>
               <small class="text-gray-500">Order #67890</small>
             </div>
@@ -99,6 +99,12 @@ import {
 } from "@ionic/vue";
 import { flag } from "ionicons/icons";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+const route=useRouter();
+function goto (id: number)
+{
+  route.push(`/Transaction/${id}`)
+}
   import VueApexCharts  from "vue3-apexcharts";
 // Chart Data
 const earningsData = Array.from({ length: 30 }, () => Math.floor(Math.random() * 200) + 50);
