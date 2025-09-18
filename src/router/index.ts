@@ -3,9 +3,11 @@ import { RouteRecordRaw } from "vue-router";
 import customerRoutes from "./customer";
 import SelllerRute from "./seller";
 import  authRoute from "./auth"
+import Rider from "./rider"
 const routes: Array<RouteRecordRaw> = [
   // ...customerRoutes,
-  ...SelllerRute,
+  // ...SelllerRute,
+     ...Rider,
    ...authRoute,
 ];
 

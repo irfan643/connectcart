@@ -9,6 +9,8 @@ http://ionicframework.com/docs/theming/ */
 }
  :root {
       --ion-font-family: 'Manrope', sans-serif; 
+
+  --primary-color: #634F96 ;
     }
  @import "tailwindcss";
  
