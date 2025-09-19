@@ -3,8 +3,8 @@
     <IonHeader  class="ion-no-border  ">
       <IonToolbar class=" ion-text-center text_color">
         <IonTitle class=" font-semibold font-Manrope">Dashboard</IonTitle>
-        <IonButtons slot="end">
-         <IonButton  shape="round">
+        <IonButtons slot="end" >
+         <IonButton  shape="round"  @Click="goto()">
           <IonIcon :Icon=" settingsOutline" slot="icon-only"  class="size-6" />
          </IonButton>
         </IonButtons >
@@ -122,8 +122,21 @@
 import { IonPage, IonHeader, IonToolbar, IonCardTitle,IonTitle, IonContent, IonButton, IonButtons, IonIcon, IonLabel, IonList, IonImg, IonCard, IonCardSubtitle, IonCardHeader } from '@ionic/vue'
 import { Icon } from 'ionicons/dist/types/components/icon/icon';
 import { settings, settingsOutline } from 'ionicons/icons';
+    import { useRouter } from 'vue-router';
+
+  const router=useRouter();
+const goto = () => {
+  router.push("/Setting");
+
+  // Remove focus from any button to prevent aria-hidden warning
+  const active = document.activeElement as HTMLElement;
+  if (active) active.blur();
+
+  console.log("Navigating to settings page...");
+};
 </script>
 <style>
+    
    p{
     color:var(--primary-color) ;
     

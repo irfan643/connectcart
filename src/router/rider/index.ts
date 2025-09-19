@@ -22,10 +22,18 @@ const   Rider: Array <RouteRecordRaw>=[
           path:"Profile",
           component : ()=> import ("@/views/rider/RiderProfile.vue")
         }
+
   ]
-}
 
-
+},
+{
+   path:"/Setting",
+   component: ()=> import ("@/views/rider/Setting.vue")
+},
+ {
+  path:"/OrderDetails/:id",
+  component:()=> import("@/views/rider/OrderDetails.vue")
+ }
 
 ]
 export  default Rider;

@@ -49,7 +49,7 @@
            <IonSegmentContent id="Active">
                        
         <IonList lines="none">
-          <IonItem lines="none" button >
+          <IonItem lines="none" button @click="goto(1254)" >
             <div class="flex gap-3">
              
               <div class="size-10 rounded-lg border-1   items-center justify-center  flex bg-gray-200  border-gray-300">
@@ -285,7 +285,7 @@ import { Icon } from "ionicons/dist/types/components/icon/icon";
 const router =useRouter();
 function goto(id:number){
 selected.value = "Active";
-  router.push(`/OrderInfo/+${id}`)
+  router.push(`/OrderDetails/ `+ `${id}`)
   
 }
 
