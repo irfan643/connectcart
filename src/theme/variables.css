@@ -1,9 +1,9 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
-@font-face {
+/* @font-face {
     font-family: 'Manrope';
-    src: url('/src/assets/fonts/Manrope-ExtraLight.ttf') format('truetype');
-}
+     src: url('/asset/font/Manrope-ExtraLight.ttf') format('truetype');
+  } */
 @theme {
     --font-Manrope: 'Manrope', sans-serif;
 }
@@ -13,7 +13,9 @@ http://ionicframework.com/docs/theming/ */
   --primary-color: #634F96 ;
     }
  @import "tailwindcss";
- 
+    body {
+ /* 👈 your chosen color */
+}
   .btn{
 
      --padding-top:0.9rem;

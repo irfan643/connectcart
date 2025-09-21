@@ -10,7 +10,7 @@
                 </IonButton>
             </IonButtons>
         <IonTitle
-          class="ion-text-capitalize shadow-none text_color ion-text-center font-Manrope font-bold"
+          class="ion-text-capitalize shadow-none text_color ion-text-center   font-bold"
         >
           deliveries
          
@@ -56,7 +56,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -75,7 +75,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -92,7 +92,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -110,7 +110,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -127,7 +127,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -153,7 +153,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -170,7 +170,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -187,7 +187,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -204,7 +204,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -221,7 +221,7 @@
                          <IonIcon aria-hidden="true" :icon=" box"  class="size-8" />                    
               </div>
               <IonLabel class="ion-align-content-center">
-                <h2 class="text_color capitalize font-Manrope !text-[17px]">
+                <h2 class="text_color capitalize   !text-[17px]">
                   Sara Johson
                 </h2>
                 <p class="p_color">123 Elm  Street Anytown </p>
@@ -300,6 +300,11 @@ h1 {
   font-size: 24px;
   color: var(--ion-color-primary);
 }
+h2 {
+  font-size: 24px;
+  color:black;
+    font-weight: bold;
+}
 ion-segment-button {
   --padding-start: 0px;
   --padding-end: 0px;
@@ -309,5 +314,8 @@ ion-segment-button {
 ion-item {
   padding-top: 12px;
   --padding-start: 10px;
+}
+h2{
+
 }
 </style>

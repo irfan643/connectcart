@@ -197,7 +197,7 @@ h1 {
   font-weight: bold;
 }
 h2 {
-  font-size: 1rem;
+  font-size: 1rem ;
   color: #666;
 }
 .text-success {

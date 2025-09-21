@@ -33,7 +33,19 @@ const   Rider: Array <RouteRecordRaw>=[
  {
   path:"/OrderDetails/:id",
   component:()=> import("@/views/rider/OrderDetails.vue")
- }
-
+ },
+ {
+  path: '/update/:type', // type can be "email" or "phone"
+  name: 'UpdateContact',
+  component: () => import('@/views/rider/UpdateContact.vue')
+},
+    {
+      path:"/Vehicallicense",
+      component: ()=> import("@/views/rider/VehicalLicense.vue")
+    },
+    {
+      path:"/DeliveryInfo/:id",
+      component:()=>import("@/views/rider/DeliveryInfo.vue")
+    }
 ]
 export  default Rider;
