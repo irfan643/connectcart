@@ -1,9 +1,16 @@
 <template>
   <IonPage>
     <!-- Header -->
-    <IonHeader>
+    <IonHeader class="ion-no-border ">
       <IonToolbar>
-        <IonTitle class="text-lg font-bold text-[#140D1C]">
+             <IonButtons slot="start">
+              <IonBackButton 
+                default-href="/" 
+              >
+
+              </IonBackButton>
+             </IonButtons>
+        <IonTitle class="text-lg font-bold ion-text-center text-[#140D1C]">
           Delivery Details
         </IonTitle>
       </IonToolbar>
@@ -13,7 +20,7 @@
     <IonContent class="bg-[#FAF7FC]">
       <!-- Order Summary -->
       <section class="p-4">
-        <h2 class="text-xl font-bold text-[#140D1C]">Order Summary</h2>
+        <h2 class="text-xl !font-bold text-[#140D1C]">Order Summary</h2>
 
         <!-- Products List -->
         <div class="space-y-3 mt-4">
@@ -45,19 +52,20 @@
 
       <!-- Delivery Status -->
       <section class="p-4">
-        <h2 class="text-xl font-bold text-[#140D1C]">Delivery Status</h2>
-        <IonItem lines="none" class="mt-2 rounded-lg bg-[#FAF7FC]">
-          <IonIcon :icn="checkmarkDone" slot="start" class="text-[#140D1C]" />
-          <IonLabel class="text-base text-[#140D1C]">Completed</IonLabel>
+        <h2 class="text-xl !font-bold text-[#140D1C]">Delivery Status</h2>
+        <IonItem lines="none" style="--padding-start:var(--padding-start)" class="mt-2   rounded-lg bg-[#FAF7FC]">
+           
+          <IonIcon :icon="checkmarkCircleOutline" slot="start" class="text-[#140D1C] bg-gray-200 p-2  rounded-xl " />
+          <IonLabel class="text-base text-[#140D1C] pl-4">Completed</IonLabel>
         </IonItem>
       </section>
 
       <!-- Earnings -->
       <section class="p-4">
-        <h2 class="text-xl font-bold text-[#140D1C]">Earnings</h2>
-        <IonItem lines="none" class="mt-2 rounded-lg bg-[#FAF7FC]">
-          <IonIcon :icon="cash" slot="start" class="text-[#140D1C]" />
-          <IonLabel class="text-base text-[#140D1C]">$12.50</IonLabel>
+        <h2 class=" !font-bold text-[#140D1C]">Earnings</h2>
+        <IonItem lines="none" style="--padding-start:var(--padding-start)" class="mt-2 rounded-lg bg-[#FAF7FC]">
+          <IonIcon :icon="dollor" slot="start" class="text-[#140D1C] bg-gray-200 p-2  rounded-xl "  />
+          <IonLabel class="text-base text-[#140D1C] pl-2 ">$12.50</IonLabel>
         </IonItem>
       </section>
     </IonContent>
@@ -73,7 +81,10 @@ import {
   IonContent,
   IonItem,
   IonLabel,
-  IonIcon
+  IonIcon,
+  IonButtons,
+  IonBackButton
 } from '@ionic/vue';
-import { cash, checkmarkDone } from 'ionicons/icons';
+import dollor from"@/assets/icon/dollor.svg"
+import { cash, checkmarkCircleOutline, checkmarkDone } from 'ionicons/icons';
 </script>

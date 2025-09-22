@@ -19,7 +19,7 @@
           </div>
         <div class="mt-2">
           <!-- set default value to 'Active' -->
-          <IonSegment   class="w-50 ion-no-padding">
+          <IonSegment v-model="selected"   class="w-50 ion-no-padding">
             <IonSegmentButton
               value="Active"
               class="mt-2 size-4"
@@ -146,7 +146,7 @@
                        
         <IonList lines="none">
         
-        <IonItem lines="none" button >
+        <IonItem lines="none" button @click="goto(445466564)"  >
             <div class="flex gap-3">
              
               <div class="size-10 rounded-lg border-1   items-center justify-center  flex bg-gray-200  border-gray-300">
@@ -271,9 +271,9 @@ import { Style } from "@capacitor/status-bar";
 import { Icon } from "ionicons/dist/types/components/icon/icon";
    const  selected =ref("Active")
    const route = useRoute();
-   watch (selected,(newvalue,oldvalue)=>{
-       console.log(` ${oldvalue} and new value ${newvalue}` )
-   })
+    watch(selected, (newValue, oldValue) => {
+  console.log(`Segment changed from ${oldValue} → ${newValue}`);
+});
    watch(()=>route.path,
    (newPath)=>{
     if (newPath === "/Orders")
@@ -283,16 +283,16 @@ import { Icon } from "ionicons/dist/types/components/icon/icon";
    }
   )   
 const router =useRouter();
-function goto(id:number){
-selected.value = "Active";
-  router.push(`/OrderDetails/ `+ `${id}`)
-  
+function goto(id: number) {
+  if (selected.value === "Active") {
+    // Navigate to Active detail route
+    router.push(`/OrderDetails/${id}`);
+  } else if (selected.value === "History") {
+    // Navigate to History detail route
+    router.push(`/DeliveryInfo/${id}`);
+  }
 }
 
-function  move(rute :string)
-{
-  router.push(rute)
-}
 </script>
 
 <style scoped>
@@ -315,7 +315,5 @@ ion-item {
   padding-top: 12px;
   --padding-start: 10px;
 }
-h2{
 
-}
 </style>
