@@ -4,10 +4,12 @@ import customerRoutes from "./customer";
 import SelllerRute from "./seller";
 import  authRoute from "./auth"
 import Rider from "./rider"
+import  HubRoute from "./Hub"
 const routes: Array<RouteRecordRaw> = [
   // ...customerRoutes,
   // ...SelllerRute,
-     ...Rider,
+    //  ...Rider,
+    ...HubRoute,
    ...authRoute,
 ];
 

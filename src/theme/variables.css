@@ -1,14 +1,16 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
-/* @font-face {
+@font-face {
     font-family: 'Manrope';
      src: url('/asset/font/Manrope-ExtraLight.ttf') format('truetype');
-  } */
+     font-weight: 100 900; /* if using variable font */
+  font-display: swap;
+    }
 @theme {
     --font-Manrope: 'Manrope', sans-serif;
 }
  :root {
-      --ion-font-family: 'Manrope', sans-serif; 
+      /* --ion-font-family: 'Manrope', sans-serif;  */
 
   --primary-color: #634F96 ;
     }

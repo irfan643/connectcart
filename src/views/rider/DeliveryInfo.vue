@@ -86,5 +86,5 @@ import {
   IonBackButton
 } from '@ionic/vue';
 import dollor from"@/assets/icon/dollor.svg"
-import { cash, checkmarkCircleOutline, checkmarkDone } from 'ionicons/icons';
+import {checkmarkCircleOutline} from 'ionicons/icons';
 </script>
