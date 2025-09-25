@@ -1,15 +1,18 @@
 <template>
   <IonPage>
     <!-- Header -->
+   
+    
     <IonHeader class="ion-no-border">
       <IonToolbar>
         <IonTitle class="text-xl ion-text-center font-bold text_color capitalize">packages</IonTitle>
       </IonToolbar>
     </IonHeader>
-
+ 
     <!-- Content -->
    <IonContent class="ion-padding ">
   <!-- Search -->
+      
   <div
     class="group border border-transparent h-12 flex w-full rounded-xl overflow-hidden bg-[#EBE8F2] focus-within:border-gray-500 transition-colors duration-300"
   >
@@ -33,7 +36,7 @@
   </div>
 
   <IonList lines="none">
-    <IonItem button class="m-0">
+    <IonItem button class="m-0" @click="goto('1235')">
       <IonIcon :icon="cubeOutline" slot="start" class="text-[#140D1C]" />
       <div class="flex justify-center items-center w-full">
         <div class="flex-1">
@@ -43,7 +46,7 @@
           </IonLabel>
         </div>
         <div>
-          <IonLabel class="pt-2 font-bold text-yellow-600">Pending</IonLabel>
+          <IonLabel class="pt-2 font-bold ">Pending</IonLabel>
         </div>
       </div>
     </IonItem>
@@ -58,7 +61,7 @@
           </IonLabel>
         </div>
         <div>
-          <IonLabel class="pt-2 font-bold text-yellow-600">Pending</IonLabel>
+          <IonLabel class="pt-2 font-bold ">Pending</IonLabel>
         </div>
       </div>
     </IonItem>
@@ -186,8 +189,8 @@
   </IonList>
       
      
-<IonFab slot="fixed" class=""   vertical="bottom" horizontal="end">
-          <IonFabButton  color="tertiary " style="--border-radius:10px ; --box-shadow:none " >
+<IonFab slot="fixed"    vertical="bottom" horizontal="end" >
+          <IonFabButton  class="mb-2 mr-2" color="tertiary " style="--border-radius:10px ; --box-shadow:none "@click="goto()" >
                   <ion-icon :icon="barcodeOutline" class="text-white  !bg-transparent  " button ></ion-icon>
 
           </IonFabButton>
@@ -213,6 +216,7 @@ import {
   IonLabel,
   IonFab,
   IonFabButton,
+  IonRouterOutlet,
  
 } from "@ionic/vue";
 import {
@@ -221,6 +225,17 @@ import {
   cubeOutline,
  
 } from "ionicons/icons";
+import { useRouter } from "vue-router";
+const Router = useRouter()
+
+const goto = (id?:string) => {
+   if(id)
+         Router.push({ name: 'dropoff-package-details',params: { id } })
+else
+  Router.push({ name: 'package-details' })
+
+}
+
 </script>
 <style scoped>
 ion-item {
