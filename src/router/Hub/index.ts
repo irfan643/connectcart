@@ -43,8 +43,28 @@ const HubRoute: Array<RouteRecordRaw> = [
         name: "hub-profile",
         component: () => import("@/views/Hub/Profile.vue"),
       },
+      {
+        path:"profile/ContactInfo",
+        name:"contactinfo",
+        component:()=> import("@/views/Hub/ContactInfo.vue")
+      }
     ],
+    
+    
   },
+   {
+       path:"/Hubsetting",
+       name:'setting',
+       component:()=> import("@/views/Hub/HubSetting.vue")
+       
+
+     },
+     {
+      path:"/Dropoff",
+      name:'dropoff',
+        component:()=> import("@/views/Hub/Dropoff.vue"),
+           
+     }
 ];
 
 export default HubRoute;

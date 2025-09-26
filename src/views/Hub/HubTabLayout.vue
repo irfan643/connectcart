@@ -9,7 +9,7 @@
           <ion-label>Dashboard</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="packages" href="/packages" @click="resetroute()">
+        <ion-tab-button tab="packages" href="/packages" @click="resetroute('hub-packages')">
           <ion-icon aria-hidden="true" :icon="cubeOutline" />
           <ion-label>Packages</ion-label>
         </ion-tab-button>
@@ -19,7 +19,7 @@
           <ion-label>Return and Issues</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="profile" href="/profile">
+        <ion-tab-button tab="profile" href="/profile" @click="resetroute(`hub-profile`)">
           <ion-icon aria-hidden="true" :icon="person" />
           <ion-label>Profile</ion-label> 
         </ion-tab-button>
@@ -40,11 +40,11 @@ import { person, home, car, pricetag, cubeOutline, refreshCircleOutline, refresh
    import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const resetroute=()=>{
+const resetroute=(path:string)=>{
 
 
-  if (router.currentRoute.value.name !== 'hub-packages') {
-    router.push({ name: 'hub-packages' })
+  if (router.currentRoute.value.name !== path) {
+    router.push({ name: `${path}` })
   }
 }
 </script>

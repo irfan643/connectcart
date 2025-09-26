@@ -63,3 +63,19 @@ http://ionicframework.com/docs/theming/ */
 
 
    }
+   .custom-input {
+  width: 100%;
+  border-width: 2px;
+  border-color: #d1d5db; /* tailwind border-gray-300 */
+  background-color: #F2F0F5;
+  border-radius: 0.75rem; /* rounded-xl */
+  padding-left: 0.75rem;  /* px-3 = 0.75rem */
+  padding-right: 0.75rem;
+  transition: all 0.2s ease-in-out; /* default Tailwind transition */
+}
+
+/* focus-within styles */
+.custom-input:focus-within {
+  border-color: #6030ff;
+  
+}
